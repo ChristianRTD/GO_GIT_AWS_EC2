@@ -29,7 +29,7 @@ jobs:
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
           sudo pm2 delete my-app || echo "No existing process found"
-          cd GO.AWS_EC2
+          cd GO_GIT_AWS_EC2
           git pull origin main
           sudo pm2 start go --name "my-app" -- run main.go
           sudo pm2 save
